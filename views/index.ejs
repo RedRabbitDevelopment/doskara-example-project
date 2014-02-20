@@ -1,0 +1,44 @@
+
+Hello World
+<ul>
+
+</ul>
+<form>
+  <input type="text" name="data" id="text" />
+  <input type="submit" />
+</form>
+<script>
+(function() {
+  function getAll() {
+    var xmlHttp = null;
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( 'GET', '/getAll', false );
+    xmlHttp.send( null );
+    var response = JSON.parse( xmlHttp.responseText);
+    var ul = document.getElementsByTagName('ul')[0];
+    while(ul.hasChildNodes()) {
+      ul.removeChild(ul.lastChild);
+    }
+    for(i = 0; i < response.result.length; i++) {
+      var listItem = document.createElement('li');
+      listItem.appendChild(document.createTextNode(response.result[i]));
+      ul.appendChild(listItem);
+    }
+  }
+  getAll();
+  function save(e) {
+    e.preventDefault();
+    var input = document.getElementById('text');
+
+    var xmlHttp = null;
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open('POST', '/', false);
+
+    xmlHttp.send(JSON.stringify({body: input.value}));
+    getAll();
+  }
+  var form = document.getElementsByTagName('form')[0];
+  form.addEventListener('submit', save, false);
+})();
+</script>
+

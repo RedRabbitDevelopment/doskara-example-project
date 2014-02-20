@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "doskara": "0.0.0",
+    "doskara": "0.0.5",
     "express": "~3.4.8",
-    "q": "~1.0.0"
+    "q": "~1.0.0",
+    "ejs-locals": "~1.0.2",
+    "ejs": "~0.8.5"
   }
 }

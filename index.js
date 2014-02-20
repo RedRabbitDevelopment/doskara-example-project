@@ -4,10 +4,13 @@ var app = express();
 
 var Doskara = require('doskara');
 
+app.engine('engine', require('ejs-locals'));
+app.set("views", __dirname + "/views");
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
+
 app.get('/', function(req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.write('Hello World');
-  res.end();
+  res.render('index');
 });
 
 app.get('/404', function(req, res) {

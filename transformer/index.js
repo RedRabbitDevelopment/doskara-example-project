@@ -1,11 +1,10 @@
 
 var Doskara = require('doskara');
-var doskara = new Doskara(process.env);
 var options;
-doskara.on('init', function(o) {
+Doskara.on('init', function(o) {
   options = o;
 });
-doskara.on('transform', function(toTransform) {
+Doskara.on('transform', function(toTransform) {
   var transformed = toTransform.split('').reverse().join('');
   var remove = (options && options.remove) || [];
   var i;
@@ -14,3 +13,5 @@ doskara.on('transform', function(toTransform) {
   }
   return transformed;
 });
+
+Doskara.listen(Doskara.ports.transformer);
