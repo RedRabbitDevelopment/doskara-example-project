@@ -35,6 +35,7 @@ Hello World
     xmlHttp.open('POST', '/', false);
 
     xmlHttp.send(JSON.stringify({body: input.value}));
+    input.value = '';
     getAll();
   }
   var form = document.getElementsByTagName('form')[0];
