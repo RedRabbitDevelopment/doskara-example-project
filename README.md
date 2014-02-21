@@ -33,8 +33,11 @@ Hooks:
 You'll notice that there were several interactions between components that aren't owned by the owner of Project. Here are the interactions:
 
 Webfront => Project (index)
+
 Webfront => DataStore (getAll)
+
 Webfront => DataStore (save)
+
 DataStore => Transformer (beforeSave)
 
 This is configured by the owner of the project. I haven't decided whether or not this configuring happens within the actual code, or in a configuration file (see Doskara.json). But each component will declare which events are available, and then the owner will hook them up.
