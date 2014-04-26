@@ -1,8 +1,5 @@
 {
   "name": "my-project",
-  "ports": {
-    "main": 80
-  },
   "buildpack-url": "ahhh!",
   "dependencies": {
     "doskara-example-data-store": "1.1.5"
