@@ -1,71 +1,10 @@
 {
-  "name": 'my-project',
-  "ports": [
-    "proxy"
-  ],
-  "events": {
-    "index": {
-      "type": "port",
-      "location": "/"
-    },
-    "404": {
-      "type": "port",
-      "location": "/404"
-    }
+  "name": "my-project",
+  "ports": {
+    "main": 80
   },
+  "buildpack-url": "ahhh!",
   "dependencies": {
-    "webfront": {
-      "type": "webfront",
-      "version": "0.0.1",
-      "ports": {
-        "webfront": 80
-      },
-      "events": {
-        "GET:/": {
-          "component": {
-            "name": "@",
-            "event": "index"
-          },
-          "type": "html",
-          "location": "/"
-        },
-        "GET:/getAll": {
-          "component": {
-            "name": "data-store",
-            "event": "getAll"
-          },
-          "type": "json"
-        },
-        "POST:/": {
-          "component": {
-            "name": "data-store",
-            "event": "save"
-          },
-          "type": "json"
-        },
-        "404": {
-          "component": {
-            "name": "@",
-            "event": "404"
-          },
-          "type": "html",
-          "location": "/404"
-        }
-      }
-    },
-    "transformer": {
-      "type": "transformer",
-      "version": "0.1.0"
-    },
-    "data-store": {
-      "type": "data-store",
-      "version": "0.1.1",
-      "events": {
-        "beforeSave": {
-          "component": "transformer",
-          "event": "tranform"
-        }
-      }
-    }
+    "doskara-example-data-store": "1.1.5"
   }
 }

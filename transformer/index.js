@@ -14,4 +14,4 @@ Doskara.on('transform', function(toTransform) {
   return transformed;
 });
 
-Doskara.listen(Doskara.ports.transformer);
+Doskara.listen();
