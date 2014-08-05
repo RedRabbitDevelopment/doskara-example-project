@@ -32,7 +32,7 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 app.get('/data', function(req, res) {
-  console.log('getting all of their stuff', dataStore);
+  console.log('getting all of their stuff', dataStore, Object.keys(dataStore));
   dataStore.getAll().then(function(data) {
     console.log('got all', data);
     res.json(data);
