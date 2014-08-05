@@ -7,7 +7,7 @@ var dataStore = new doskara.Client('doskara-example-data-store');
 var transformer = require('./transformer');
 
 dataStore.init().then(function() {
-  console.log('Setting their before save');
+  console.log('Setting their before save', dataStore);
   //dataStore.setBeforeSave(transformer).then(function() {
     dataStore.save('booya').then(function() {
       console.log('saved booya');
