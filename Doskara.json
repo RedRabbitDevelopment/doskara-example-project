@@ -2,6 +2,6 @@
   "name": "my-project",
   "buildpack-url": "ahhh!",
   "dependencies": {
-    "doskara-example-data-store": "1.1.5"
+    "data_store": "v1"
   }
 }
