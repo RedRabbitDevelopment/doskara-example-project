@@ -2,6 +2,6 @@
   "name": "my_project",
   "buildpack-url": "ahhh!",
   "dependencies": {
-    "data_store": "v1"
+    "data_store": "1.0.1"
   }
 }
